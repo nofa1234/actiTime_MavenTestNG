@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" thread-count="2" parallel="none">
+    <listeners>
+        <listener class-name="com.ict18821.report.ExtentReport"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="AllTest">
+        <classes>
+            <class name="com.ict18821.tests.LoginPageTest"></class>
+            <class name="com.ict18821.tests.HomePageTest"></class>
+            <class name="com.ict18821.tests.ReportPageTest"></class>
+            <class name="com.ict18821.tests.TaskPageTest"></class>
+            <class name="com.ict18821.tests.UsersPageTest"></class>
+            <class name="com.ict18821.tests.ApproveTTPageTest"></class>
+        </classes>
+
+    </test>
+</suite>
