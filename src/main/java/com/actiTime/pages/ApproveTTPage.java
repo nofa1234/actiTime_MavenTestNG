@@ -1,7 +1,7 @@
-package com.ict18821.pages;
+package com.actiTime.pages;
 
-import com.ict18821.base.TestBase;
-import com.ict18821.util.TestUtil;
+import com.actiTime.base.TestBase;
+import com.actiTime.util.TestUtil;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

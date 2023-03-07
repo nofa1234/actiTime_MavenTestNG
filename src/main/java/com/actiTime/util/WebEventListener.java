@@ -1,6 +1,6 @@
-package com.ict18821.util;
+package com.actiTime.util;
 
-import com.ict18821.base.TestBase;
+import com.actiTime.base.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;

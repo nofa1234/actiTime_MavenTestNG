@@ -1,8 +1,8 @@
-package com.ict18821.tests;
+package com.actiTime.tests;
 
-import com.ict18821.base.TestBase;
-import com.ict18821.pages.HomePage;
-import com.ict18821.pages.LoginPage;
+import com.actiTime.base.TestBase;
+import com.actiTime.pages.HomePage;
+import com.actiTime.pages.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;

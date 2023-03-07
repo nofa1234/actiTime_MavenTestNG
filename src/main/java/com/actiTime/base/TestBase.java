@@ -1,7 +1,7 @@
-package com.ict18821.base;
+package com.actiTime.base;
 
-import com.ict18821.util.TestUtil;
-import com.ict18821.util.WebEventListener;
+import com.actiTime.util.TestUtil;
+import com.actiTime.util.WebEventListener;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -24,7 +24,7 @@ public abstract class TestBase {
     public TestBase() {
         try {
             prop = new Properties();
-            FileInputStream ip = new FileInputStream("G:\\EDUCATION\\8th semester\\ITS4202 Emerging Technologies\\Assignment\\ICT18821_MavenTestNG\\src\\main\\java\\com\\ict18821\\config\\config.properties");
+            FileInputStream ip = new FileInputStream("C:\\Users\\96555\\Desktop\\ict18843\\actiTime_MavenTestNG\\src\\main\\java\\com\\actiTime\\configconfig.properties");
             prop.load(ip);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -36,10 +36,10 @@ public abstract class TestBase {
     public static void initialization() {
         String browserName = prop.getProperty("browser");
         if (browserName.equals("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "G:\\EDUCATION\\8th semester\\ITS4202 Emerging Technologies\\SW\\chromedriver_win32\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "C:\\Users\\96555\\Downloads\\chromedriver_win32\\chromedriver.exe");
             driver = new ChromeDriver();
         } else if (browserName.equals("firefox")) {
-            System.setProperty("webdriver.gecko.driver", "G:\\EDUCATION\\8th semester\\ITS4202 Emerging Technologies\\SW\\chromedriver_win32\\geckodriver.exe");
+            System.setProperty("webdriver.gecko.driver", "C:\\Users\\96555\\Downloads\\geckodriver-v0.32.2-win32\\geckodriver.exe");
             driver = new FirefoxDriver();
         }
 

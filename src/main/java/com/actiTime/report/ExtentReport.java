@@ -1,4 +1,4 @@
-package com.ict18821.report;
+package com.actiTime.report;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;

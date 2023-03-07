@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>ICT-18-821</artifactId>
+    <artifactId>actiTime</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -68,5 +68,5 @@
             <version>1.2.17</version>
         </dependency>
     </dependencies>
-
+    <name>actiTime</name>
 </project>

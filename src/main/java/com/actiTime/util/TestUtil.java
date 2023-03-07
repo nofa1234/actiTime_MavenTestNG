@@ -1,4 +1,4 @@
-package com.ict18821.util;
+package com.actiTime.util;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -13,7 +13,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import static com.ict18821.base.TestBase.driver;
+import static com.actiTime.base.TestBase.driver;
 
 public class TestUtil {
     public static long PAGE_LOAD_TIMEOUT = 20;
