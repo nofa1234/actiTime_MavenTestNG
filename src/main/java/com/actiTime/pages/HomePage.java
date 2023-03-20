@@ -6,47 +6,39 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class HomePage extends TestBase {
-    @FindBy(xpath = "//a[contains(@class,'userProfileLink username ')]")
-    WebElement username;
-    @FindBy(xpath = "//a[contains(@class,'content tasks')]")
-    WebElement tasks;
-    @FindBy(xpath = "//a[contains(@class,'content reports')]")
-    WebElement reports;
-    @FindBy(xpath = "//div[contains(text(),'Users')]")
-    WebElement users;
-    @FindBy(xpath = "//a[contains(text(),'Approve Time-Track')]")
-    WebElement ApproveTimeTrackButton;
-    public HomePage() {
-        PageFactory.initElements(driver, this);
-    }
+    @FindBy(xpath = "//a[@class='content tasks']")
+    WebElement taskLink;
+		
+    @FindBy(xpath = "//a[@class='content reports']")
+    WebElement reportsLink;
+		
+    @FindBy(xpath = "//a[@class='content users']")
+    WebElement usersLink;
+		
+    @FindBy(xpath = "//div[@id='logo_aT']")
+    WebElement actitimeLogo;
+		
+		
+	public HomePage() {
+        	PageFactory.initElements(driver, this);
+	}
+		
 
-    public String validateTitle() {
-        logger.info(driver.getTitle());
-        return driver.getTitle();
-    }
-
-    public boolean VerifyUsername() {
-        logger.info(username.isDisplayed());
-        return username.isDisplayed();
-    }
-
-    public TasksPage ClickTasks() {
-        tasks.click();
-        return new TasksPage();
-    }
-
-    public ReportsPage ClickReports() {
-        reports.click();
-        return new ReportsPage();
-    }
-
-    public UsersPage ClickUsers() {
-        users.click();
-        return new UsersPage();
-    }
-    public ApproveTTPage ClickApproveTimeTrack(){
-        ApproveTimeTrackButton.click();
-        return new ApproveTTPage();
-    }
-
+	public Boolean validateActiTimeLogoImage() {
+		return actitimeLogo.isDisplayed();
+	}
+		
+	public TaskPage ClickOnTaskLink() {
+		this.taskLink.click();
+		return new TaskPage();
+	}
+		
+	public ReportsPage ClickOnReportsLink() {
+		this.reportsLink.click();
+		return new ReportsPage();
+	}
+		
+	public UsersPage ClickOnUsersLink() {
+		this.usersLink.click();
+		return new UsersPage();		}
 }

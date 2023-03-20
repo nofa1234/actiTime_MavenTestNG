@@ -12,50 +12,51 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class UsersPageTest extends TestBase {
-    LoginPage loginPage;
-    HomePage homePage;
-    UsersPage usersPage;
-    String sheetName = "userData";
+        LoginPage loginPage;
+	HomePage homePage;
+	UsersPage userPage;
+	String SheetName = "NewUsers";
+	
+	public UsersPageTest()
+	{
+		super();
+	}
+	
+	@BeforeMethod
+	public void setUp() {
+		initialization();
+		loginPage =  new LoginPage();
+		homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+		userPage = homePage.ClickOnUsersLink();
+		
+	}
+	
+	@Test(priority = 1)
+	public void VerifyPageTitle() {
+		
+		Assert.assertEquals(userPage.UsersPageTitle(), "actiTIME - User List");
+	}
+	
+	@DataProvider
+	public Object [][] GetNewUserTestData()
+	{
+	   Object [][] data = 	TestUtil.getTestData(SheetName);
+	   return data;
+	}
+	
+	@Test(priority = 2, dataProvider = "GetNewUserTestData")
+	public void ValidateNewUserForm(String fname,String lname ,String email) {
+		
+		userPage.ClickOnNewUserButton();
+		
+		Assert.assertTrue(userPage.FillNewUserForm(fname, lname,email),"The Created Message not Displayed");
+	}
+	
+	
+	@AfterMethod
+	public void tearDown() {
+		driver.quit();
+	}
 
-    public UsersPageTest() {
-        super();
-    }
-
-    @BeforeMethod
-    public void setUp() {
-        initialization();
-        loginPage = new LoginPage();
-        homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
-        usersPage = homePage.ClickUsers();
-    }
-
-    @Test(priority = 1)
-    public void validateUsersTextTest() {
-        boolean isVisible = usersPage.validateUsersText();
-        Assert.assertTrue(isVisible, "The text Users is not visible");
-    }
-
-    @Test(priority = 2)
-    public void clickNewUserButtonTest() {
-        boolean isPannelVisible = usersPage.clickNewUserButton();
-        Assert.assertTrue(isPannelVisible);
-    }
-
-    @DataProvider
-    public Object[][] getDataFromSheet() {
-        Object[][] data = TestUtil.getTestData(sheetName);
-        return data;
-    }
-
-    @Test(priority = 3, dataProvider = "getDataFromSheet")
-    public void fillTheFormTest(String firstname, String middlename, String lastname, String email) {
-        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.PAGE_LOAD_TIMEOUT));
-        usersPage.fillTheForm(firstname, lastname, middlename, email);
-    }
-
-    @AfterMethod
-    public void tearDown() {
-        driver.quit();
-    }
 
 }

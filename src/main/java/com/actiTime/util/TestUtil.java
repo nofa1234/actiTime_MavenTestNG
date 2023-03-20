@@ -18,7 +18,7 @@ import static com.actiTime.base.TestBase.driver;
 public class TestUtil {
     public static long PAGE_LOAD_TIMEOUT = 20;
     public static long IMPLICIT_WAIT = 10;
-    public static String TESTDATA_EXCELSHEET_PATH = "G:\\EDUCATION\\8th semester\\ITS4202 Emerging Technologies\\Assignment\\ICT18821_MavenTestNG\\src\\main\\java\\com\\ict18821\\data\\TestDataSet.xlsx";
+    public static String TESTDATA_EXCELSHEET_PATH = "C:/Users/96555/Desktop/ict18843/actiTime_MavenTestNG/src/main/java/com/actiTime/testdata.xlsx";
     static Workbook workbook;
     static Sheet sheet;
 
